@@ -22,11 +22,11 @@ VRM_CORE_NAMESPACE
         TStorage * storage) noexcept
     {
         VRM_CORE_STATIC_ASSERT(                           // .
-            sizeof(typename TStorage::type) >= sizeof(T), // .
+            sizeof(typename TStorage) >= sizeof(T),       // .
             "`TStorage` is not big enough for `T`.");
 
         VRM_CORE_STATIC_ASSERT(                             // .
-            alignof(typename TStorage::type) >= alignof(T), // .
+            alignof(typename TStorage) >= alignof(T),       // .
             "`TStorage` is not properly aligned for `T`.");
 
         VRM_CORE_ASSERT_OP(storage, !=, nullptr);
